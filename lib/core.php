@@ -9,11 +9,14 @@ class Core extends OC {
 
     public static function init() {
         parent::init();
+
         $preFilters = self::$server->getSystemConfig()->getValue("preFilters");
         self::registers($preFilters);
     }
 
     public static function handleRequest() {
+		OC_App::loadApps(array("prefilter"));
+
         foreach(self::$PREFILTERS as $preFilter) {
             $preFilter->run();
         }
