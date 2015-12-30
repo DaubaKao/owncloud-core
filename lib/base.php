@@ -591,7 +591,7 @@ class OC {
 		\OC::$server->getEventLogger()->start('init_session', 'Initialize session');
 		OC_App::loadApps(array('session'));
 		if (!self::$CLI) {
-			self::initSession();
+			static::initSession();
 		}
 		\OC::$server->getEventLogger()->end('init_session');
 		self::initTemplateEngine();
