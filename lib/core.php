@@ -13,6 +13,18 @@ class Core extends OC {
         self::registers($preFilters);
     }
 
+	public static function initSession() {
+        $config = self::$server->getSystemConfig();
+        $handler = new DatabaseSessionHandler();
+        $handler->init($config->getValue("dbtype"),
+                       $config->getValue("dbhost"),
+                       $config->getValue("dbuser"),
+                       $config->getValue("dbpassword"),
+                       $config->getValue("dbname"));
+        $session_Est = session_set_save_handler($handler, true);
+        parent::initSession();
+    }
+
     public static function handleRequest() {
         foreach(self::$PREFILTERS as $preFilter) {
             $preFilter->run();
