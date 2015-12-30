@@ -26,7 +26,7 @@ use OCA\user_ldap\tests\integration\AbstractIntegrationTest;
 use OCA\User_LDAP\Mapping\UserMapping;
 use OCA\user_ldap\USER_LDAP;
 
-require_once __DIR__  . '/../../../../../lib/base.php';
+require_once __DIR__  . '/../../../../../lib/core.php';
 
 class IntegrationTestPaging extends AbstractIntegrationTest {
 	/** @var  UserMapping */

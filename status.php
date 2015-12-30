@@ -27,7 +27,7 @@
 
 try {
 
-	require_once 'lib/base.php';
+	require_once 'lib/core.php';
 
 	$systemConfig = \OC::$server->getSystemConfig();
 

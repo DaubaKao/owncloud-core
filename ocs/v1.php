@@ -25,7 +25,7 @@
  *
  */
 
-require_once '../lib/base.php';
+require_once '../lib/core.php';
 
 if (\OCP\Util::needUpgrade()
 	|| \OC::$server->getSystemConfig()->getValue('maintenance', false)
